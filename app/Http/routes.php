@@ -19,4 +19,6 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/test', 'BaseballController@getTest');
+
 
