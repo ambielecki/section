@@ -25,7 +25,7 @@ Examples of auth:
 
     [Getbootstrap](http://getbootstrap.com/)
     
-*   Font Awesome (to use Bootstrap buttons and some other icons)
+*   Font Awesome
     
     [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
     
