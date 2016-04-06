@@ -10,11 +10,6 @@ use App\Player;
 
 class BaseballController extends Controller
 {
-    //make auth available to all functions
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     public function getTeams(){
         //get teams from db
@@ -31,21 +26,11 @@ class BaseballController extends Controller
     public function getTest(){
         //check users level to see if they are an admin
         if(auth()->user()->level <= 1){
-            /*$helper = new Libraries\teamHelper();
-            $leagueData = $helper->sortTeams();*/
 
-            $teams = new Team();
-            $leagueData = $teams->sortTeams();
+            $team = Team::find(3);
+            dump($team->toArray());
+            dump($team->users->toArray());
 
-            dump($leagueData);
-
-            foreach($leagueData as $leagueName => $divisions){
-                echo $leagueName.'<br>';
-                foreach($divisions as $divisionName => $teams){
-                    echo '    '.$divisionName.'<br>';
-                }
-            }
-        //send non admins to unauthorized view
         }else{
             return view('baseball.unauthorized');
         }
