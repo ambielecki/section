@@ -27,11 +27,34 @@
                             <label class="col-md-4 control-label" for="last_name">Last Name</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="name" id="last_name" value="{{ old('last_name') }}">
+                                <input type="text" class="form-control" name="last_name" id="last_name" value="{{ old('last_name') }}">
 
                                 @if ($errors->has('last_name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('last_name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('team_id') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label" for="team_id">Favorite Team</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" name="team_id" id="team_id">
+                                    @foreach($leagues as $leagueName => $divisions)
+                                        @foreach($divisions as $divisionName => $teams)
+                                            <optgroup label='{{$leagueName}} - {{$divisionName}}'></optgroup>
+                                            @foreach($teams as $team)
+                                                <option value={{$team->id}} {{$team->id===3?'selected':''}}>{{$team->name}}</option>
+                                            @endforeach
+                                        @endforeach
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('team_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('team_id') }}</strong>
                                     </span>
                                 @endif
                             </div>

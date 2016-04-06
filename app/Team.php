@@ -15,6 +15,10 @@ class Team extends Model
     {
         return $this->hasMany('App\Player');
     }
+    public function users()
+    {
+        return $this->hasMany('App\User');
+    }
 
     public function sortTeams()
     {
@@ -30,7 +34,7 @@ class Team extends Model
                 $leagueData[$league->league][$division->division] = [];
                 foreach ($teams as $team) {
                     if ($team->league == $league->league && $team->division == $division->division) {
-                        array_push($leagueData[$league->league][$division->division], $team->name);
+                        array_push($leagueData[$league->league][$division->division], $team);
                     }
                 }
             }

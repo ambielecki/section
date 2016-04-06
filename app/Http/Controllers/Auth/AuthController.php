@@ -71,6 +71,7 @@ class AuthController extends Controller
             'team_id' => $data['team_id'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'level' => 3
         ]);
     }
 }

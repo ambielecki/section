@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Andrew's Section Auth Example</title>
 
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
@@ -40,7 +40,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                    Auth Example
                 </a>
             </div>
 
@@ -48,6 +48,10 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                    @if(Auth::user())
+                        <li><a href="{{url('/teams') }}">Teams</a></li>
+                    @endif
+                    <li><a href="{{url('/roster')}}">Roster</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->integer('team_id')->unsigned();
             $table->string('email')->unique();
             $table->string('password');
+            $table->integer('level');
             $table->rememberToken();
             $table->timestamps();
         });

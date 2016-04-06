@@ -19,6 +19,14 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/roster', 'BaseballController@getRoster');
+
+Route::group(['middleware'=>'auth'], function(){
+    Route::get('/teams', 'BaseballController@getTeams');
+});
+
+
+
 Route::get('/test', 'BaseballController@getTest');
 
 

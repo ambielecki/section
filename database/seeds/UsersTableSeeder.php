@@ -18,6 +18,7 @@ class UsersTableSeeder extends Seeder
             'team_id' => 3,
             'email' => 'andrew@dwa15.com',
             'password' => bcrypt('testing123'),
+            'level' => 1,
         ]);
     }
 }
