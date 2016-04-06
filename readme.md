@@ -7,7 +7,7 @@
 A quick auth example built with Laravel's make:auth
  
 ## Notes
-Default user: andrew@dwa15.com pw: testing123
+Default user: andrew@dwa15.com pw: testing123 admin
 
 Examples of auth:
 *   Layout - Knows auth user, displays name, shows specific pages for only auth users
