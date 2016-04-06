@@ -1,27 +1,42 @@
-# Laravel PHP Framework
+# Andrew's Section - Auth Example
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Live URL
+<http://section.andrewbielecki.me/>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Description
+A quick auth example built with Laravel's make:auth
+ 
+## Notes
+Default user: andrew@dwa15.com pw: testing123
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Examples of auth:
+*   Layout - Knows auth user, displays name, shows specific pages for only auth users
+*   Route - Restrict some routes to only auth user
+*   Roster page - Restricts some data to auth users
+*   Test route - <http://section.andrewbielecki.me/test> can only be accessed by admins
 
-## Official Documentation
+## Outside code
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+*   Laravel
+    
+    [Laravel Homepage](http://laravel.com/)
 
-## Contributing
+*   Bootstrap
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+    [Getbootstrap](http://getbootstrap.com/)
+    
+*   Font Awesome (to use Bootstrap buttons and some other icons)
+    
+    [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+    
+*   jQuery
+    
+    [jQuery](https://jquery.com/)
+    
+*   thephpleague/csv - for importing CSV tables 
 
-## Security Vulnerabilities
+    [thephpleague/csv](https://github.com/thephpleague/csv)
+    
+*   Matt Stauffer's Blog
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+    [The auth scaffold in Laravel 5.2](https://mattstauffer.co/blog/the-auth-scaffold-in-laravel-5-2)
