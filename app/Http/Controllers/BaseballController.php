@@ -6,16 +6,20 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Team;
-use DB;
-use App\Libraries;
+use App\Player;
 
 class BaseballController extends Controller
 {
     public function getTest(){
 
-        $helper = new Libraries\teamHelper();
-        $leagueData = $helper->sortTeams();
+        /*$helper = new Libraries\teamHelper();
+        $leagueData = $helper->sortTeams();*/
 
-        dump($leagueData);
+        $teams = new Team();
+        $leagueData =$teams->sortTeams();
+
+        $players = Player::with('team')->get();
+
+        dump($players->toArray());
     }
 }

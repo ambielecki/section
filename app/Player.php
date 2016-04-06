@@ -9,4 +9,9 @@ class Player extends Model
     protected $fillable = [
         'number', 'name', 'postion', 'bats', 'throws', 'age', 'height', 'weight', 'home', 'salary'
     ];
+
+    public function team()
+    {
+        return $this->belongsTo('App\Team');
+    }
 }
