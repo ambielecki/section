@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use App\Team;
 
 class AuthController extends Controller
 {
@@ -73,5 +74,26 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
             'level' => 3
         ]);
+    }
+
+    public function getRegister()
+    {
+        return $this->showRegistrationForm();
+    }
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        $teams = new \App\Team();
+        $sortedTeams = $teams->sortTeams();
+        if (property_exists($this, 'registerView')) {
+            return view($this->registerView)->with('leagues', $sortedTeams);
+        }
+
+        return view('auth.register')->with('leagues', $sortedTeams);
     }
 }
