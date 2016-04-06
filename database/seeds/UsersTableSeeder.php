@@ -12,6 +12,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        //create admin - DO NOT DO THIS ON A REAL WORLD SITE ON GITHUB - DEMO PURPOSES ONLY
         User::create([
             'first_name' => 'Andrew',
             'last_name' => 'Bielecki',

@@ -50,6 +50,7 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            //edited to match my db fields
             'first_name' => 'required|max:255',
             'last_name'=>'required|max:255',
             'team_id'=> 'required|max:255',
@@ -72,10 +73,11 @@ class AuthController extends Controller
             'team_id' => $data['team_id'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'level' => 3
+            'level' => 3 //default user level
         ]);
     }
 
+    //added to override registersUsers.php
     public function getRegister()
     {
         return $this->showRegistrationForm();
@@ -88,6 +90,7 @@ class AuthController extends Controller
      */
     public function showRegistrationForm()
     {
+        //get sorted teams through the Team Model, use in view
         $teams = new \App\Team();
         $sortedTeams = $teams->sortTeams();
         if (property_exists($this, 'registerView')) {

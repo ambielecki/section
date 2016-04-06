@@ -25,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //get the auth user's favorite team
         $team = auth()->user()->team;
         return view('home')->with('team', $team->name);
     }

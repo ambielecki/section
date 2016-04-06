@@ -4,6 +4,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class AddTeamFkToUsersTable extends Migration
+//need to add at end, as the user table is created before the team table
 {
     /**
      * Run the migrations.

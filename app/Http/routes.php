@@ -15,12 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//laravel's auth routes, see https://mattstauffer.co/blog/the-auth-scaffold-in-laravel-5-2 for a good explanation
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
 Route::get('/roster', 'BaseballController@getRoster');
 
+//routes restricted to logged in users
 Route::group(['middleware'=>'auth'], function(){
     Route::get('/teams', 'BaseballController@getTeams');
     Route::get('/test', 'BaseballController@getTest');

@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name','last_name','team_id', 'email', 'password', 'level',
+        'first_name','last_name','team_id', 'email', 'password', 'level'
     ];
 
     /**
@@ -24,6 +24,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    //fk relationship
     public function team()
     {
         return $this->belongsTo('App\Team');

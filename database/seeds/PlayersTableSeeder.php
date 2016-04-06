@@ -13,6 +13,7 @@ class PlayersTableSeeder extends Seeder
      */
     public function run()
     {
+        //use csv reader to mass assign the player info
         $reader = Reader::createFromPath(database_path().'/seeds/csv/25manroster.csv');
         $data = $reader->fetchAssoc(['team_id','number','name','position','bats','throws','age','height','weight','home','salary']);
 

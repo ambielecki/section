@@ -13,6 +13,7 @@ class TeamsTableSeeder extends Seeder
      */
     public function run()
     {
+        //use csv reader to mass assign the team info
         $reader = Reader::createFromPath(database_path().'/seeds/csv/mlbteams.csv');
         $data = $reader->fetchAssoc(['city','name','league','division']);
 
