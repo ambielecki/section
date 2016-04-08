@@ -26,11 +26,11 @@ class Team extends Model
     public function sortTeams()
     {
         //get all teams
-        $teams = Team::orderBy('name')->get();
+        $teams = $this->orderBy('name')->get();
         //get league names
-        $leagues = DB::table('teams')->select('league')->distinct()->get();
+        $leagues = $this->select('league')->distinct()->get();
         //get division name (same in both league)
-        $divisions = DB::table('teams')->select('division')->distinct()->get();
+        $divisions = $this->select('division')->distinct()->get();
 
         $leagueData = [];
 

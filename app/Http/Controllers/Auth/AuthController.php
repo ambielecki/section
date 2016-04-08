@@ -93,6 +93,7 @@ class AuthController extends Controller
         //get sorted teams through the Team Model, use in view
         $teams = new \App\Team();
         $sortedTeams = $teams->sortTeams();
+        //$sortedTeams = \App\Team::sortTeams();
         if (property_exists($this, 'registerView')) {
             return view($this->registerView)->with('leagues', $sortedTeams);
         }
