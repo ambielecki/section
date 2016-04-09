@@ -22,7 +22,7 @@ class PlayersTableSeeder extends Seeder
                 'team_id'=>$player['team_id'],
                 'number'=>$player['number'],
                 'name'=>$player['name'],
-                'postion'=>$player['position'],
+                'position'=>$player['position'],
                 'bats'=>$player['bats'],
                 'throws'=>$player['throws'],
                 'age'=>$player['age'],

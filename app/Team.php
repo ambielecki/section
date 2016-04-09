@@ -5,6 +5,27 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
+/**
+ * App\Team
+ *
+ * @property integer $id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property string $city
+ * @property string $name
+ * @property string $league
+ * @property string $division
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Player[] $players
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\User[] $users
+ * @method static \Illuminate\Database\Query\Builder|\App\Team whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Team whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Team whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Team whereCity($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Team whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Team whereLeague($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Team whereDivision($value)
+ * @mixin \Eloquent
+ */
 class Team extends Model
 {
     //for mass assignment

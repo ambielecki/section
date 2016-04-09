@@ -14,6 +14,7 @@
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <link href="/css/baseball.css" rel="stylesheet" type="text/css">
 
     <style>
         body {
@@ -50,6 +51,7 @@
                     <li><a href="{{ url('/home') }}">Home</a></li>
                     @if(Auth::user())
                         <li><a href="{{url('/teams') }}">Teams</a></li>
+                        <li><a href="{{url('/addplayer')}}">Add a Player</a></li>
                     @endif
                     <li><a href="{{url('/roster')}}">Roster</a></li>
                 </ul>
@@ -75,7 +77,15 @@
             </div>
         </div>
     </nav>
-
+    @if(\Session::has('flash_message'))
+        <div class="row flashmessage">
+            <div class="container">
+                <div class="col-sm-12">
+                    {{\Session::get('flash_message')}}
+                </div>
+            </div>
+        </div><br>
+        @endif
     @yield('content')
 
     <!-- JavaScripts -->
