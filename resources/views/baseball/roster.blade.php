@@ -24,7 +24,7 @@
                                         <tr>
                                             <td>{{$player->number}}</td>
                                             <td>{{$player->name}}</td>
-                                            <td>{{$player->postion}}</td>
+                                            <td>{{$player->position}}</td>
                                             @if(Auth::guest())
                                                 <td colspan="2">Login to see more</td>
                                             @else
