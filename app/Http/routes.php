@@ -20,7 +20,7 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/roster', 'BaseballController@getRoster');
+Route::get('/roster/{team?}', 'BaseballController@getRoster');
 
 //routes restricted to logged in users
 Route::group(['middleware'=>'auth'], function(){
