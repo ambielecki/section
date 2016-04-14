@@ -29,7 +29,7 @@ class BaseballController extends Controller
             return view('baseball.roster')->with('teams', $teams);
         }
         else{
-            $selectTeam = Team::find($team);
+            $selectTeam = Team::where('id','=',$team)->with('players')->first();
             return view('baseball.roster')->with('team', $selectTeam);
         }
     }
@@ -89,13 +89,18 @@ class BaseballController extends Controller
     public function getTest(){
         //check users level to see if they are an admin
         if(auth()->user()->level <= 1){
-            $teamSet = \DB::table('teams')
-                ->Join('players', 'players.team_id','=','teams.id')
-                ->select('teams.*')
-                ->distinct()
-                ->groupBy('teams.id')
-                ->get();
-            dump($teamSet);
+            //eager loading
+            $selectTeam = Team::with('players')->get();
+            echo('Eager Loading<br>');
+            foreach($selectTeam as $team){
+                echo($team->name.": ".count($team->players)."<br>");
+            }
+            //lazy loading
+            /*echo('Lazy Loading<br>');
+            $selectTeam = Team::get();
+            foreach($selectTeam as $team){
+                echo(count($team->players)."<br>");
+            }*/
         }else{
             return view('baseball.unauthorized');
         }
