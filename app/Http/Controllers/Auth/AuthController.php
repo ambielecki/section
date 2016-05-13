@@ -56,6 +56,7 @@ class AuthController extends Controller
             'team_id'=> 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'date' => 'required|date|after:1980-01-01'
         ]);
     }
 

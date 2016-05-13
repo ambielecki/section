@@ -102,6 +102,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('date') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label" for="date">Date after 01/01/1980</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="date" id="date">
+
+                                @if ($errors->has('date'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('date') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
