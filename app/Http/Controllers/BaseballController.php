@@ -86,23 +86,19 @@ class BaseballController extends Controller
         }*/
     }
 
+    public function getLayout(){
+        return view('test.layouttest', ['block1'=>'content2', 'block2'=>'content1']);
+    }
+
     public function getTest(){
-        //check users level to see if they are an admin
-        if(auth()->user()->level <= 1){
-            //eager loading
-            $selectTeam = Team::with('players')->get();
-            echo('Eager Loading<br>');
-            foreach($selectTeam as $team){
-                echo($team->name.": ".count($team->players)."<br>");
-            }
-            //lazy loading
-            /*echo('Lazy Loading<br>');
-            $selectTeam = Team::get();
-            foreach($selectTeam as $team){
-                echo(count($team->players)."<br>");
-            }*/
+        $bcrypt = bcrypt('password');
+        echo $bcrypt.'<br>';
+        $hash = \Hash::make('password');
+        echo $hash.'<br>';
+        if(\Hash::check('password', $hash)){
+            echo 'it works';
         }else{
-            return view('baseball.unauthorized');
+            echo 'does not work';
         }
     }
 }

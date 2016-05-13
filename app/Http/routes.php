@@ -21,12 +21,15 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/roster/{team?}', 'BaseballController@getRoster');
+Route::get('/test', 'BaseballController@getTest');
 
 //routes restricted to logged in users
 Route::group(['middleware'=>'auth'], function(){
     Route::get('/teams', 'BaseballController@getTeams');
-    Route::get('/test', 'BaseballController@getTest');
+
 
     Route::get('/addplayer', 'BaseballController@getAddPlayer');
     Route::post('/addplayer', 'BaseballController@postAddPlayer');
 });
+
+Route::get('layout', 'BaseballController@getLayout');
