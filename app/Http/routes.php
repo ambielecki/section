@@ -32,4 +32,4 @@ Route::group(['middleware'=>'auth'], function(){
     Route::post('/addplayer', 'BaseballController@postAddPlayer');
 });
 
-Route::get('layout', 'BaseballController@getLayout');
+Route::get('/layout', 'BaseballController@getLayout');
